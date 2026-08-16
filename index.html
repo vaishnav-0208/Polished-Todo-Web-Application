@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Task Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="desk">
+
+  <header class="plate">
+    <div class="plate-inner">
+      <h1>TASK DECK</h1>
+      <p class="subtitle">Press a key. Get it done.</p>
+    </div>
+  </header>
+
+  <form class="add-row" id="addForm" autocomplete="off">
+    <div class="input-well">
+      <input type="text" id="taskInput" placeholder="Type a new task…" maxlength="80" />
+    </div>
+
+    <div class="swatch-group" id="swatchGroup" role="radiogroup" aria-label="Priority color">
+      <button type="button" class="swatch swatch-amber active" data-color="amber" aria-label="Amber priority" aria-pressed="true"></button>
+      <button type="button" class="swatch swatch-mint" data-color="mint" aria-label="Mint priority" aria-pressed="false"></button>
+      <button type="button" class="swatch swatch-coral" data-color="coral" aria-label="Coral priority" aria-pressed="false"></button>
+      <button type="button" class="swatch swatch-peri" data-color="peri" aria-label="Periwinkle priority" aria-pressed="false"></button>
+    </div>
+
+    <button type="submit" class="key key-add" aria-label="Add task">
+      <span>+</span>
+    </button>
+  </form>
+
+  <nav class="filter-row" id="filterRow">
+    <button class="fkey active" data-filter="all">ALL</button>
+    <button class="fkey" data-filter="active">ACTIVE</button>
+    <button class="fkey" data-filter="done">DONE</button>
+    <button class="fkey key-clear" id="clearDone">CLEAR DONE</button>
+  </nav>
+
+  <ul class="keyboard" id="taskList"></ul>
+
+  <p class="empty-state" id="emptyState">The deck is empty. Add your first key above.</p>
+
+  <footer class="counter" id="counter">0 tasks</footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
